@@ -32,7 +32,7 @@ public class Main {
         emptyBoxListItem.add(items.get(random.nextInt(items.size())));
         emptyBoxListItem.add(items.get(random.nextInt(items.size())));
         Box box3 = new Box(emptyBoxListItem);
-       // box3.openBox();
+        box3.openBox();
 
 
 
