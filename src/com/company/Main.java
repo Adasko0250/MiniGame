@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         Character player = new Character("Bob");
-        player.showCharcter();
+        player.showCharacter();
 
 
         ArrayList<Item> items = new ArrayList<>();
@@ -17,22 +17,17 @@ public class Main {
         items.add(new Item("Shield",2,50));
         items.add(new Item("Helmet",0,35));
 
-
-
-
         Random random = new Random();
-        player.setItems(items);
-        player.showCharcter();
-
-
-
 
         ArrayList<Item> emptyBoxListItem = new ArrayList<>();
 
         emptyBoxListItem.add(items.get(random.nextInt(items.size())));
         emptyBoxListItem.add(items.get(random.nextInt(items.size())));
-        Box box3 = new Box(emptyBoxListItem);
-        box3.openBox();
+       // Box box3 = new Box(emptyBoxListItem);
+
+        player.setItems(emptyBoxListItem);
+        player.showCharacter();
+        //box3.openBox();
 
 
 

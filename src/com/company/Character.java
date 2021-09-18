@@ -54,7 +54,8 @@ public class Character {
         this.HP = HP;
     }
 
-    public void showCharcter(){
+    public void showCharacter()
+    {
         System.out.println(this);
     }
 
