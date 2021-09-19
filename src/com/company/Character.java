@@ -58,9 +58,23 @@ public class Character {
     {
         System.out.println(this);
     }
+    public void equipItem(Item item){
+        setDamage(item.getDamage()+getDamage());
+        setDefence(item.getDefence()+getDefence());
+        item.setNote("Equipped");
+
+    }
+    public void unEquipItem(Item item){
+        setDamage(getDamage()-item.getDamage());
+        setDefence(getDefence()-item.getDefence());
+        item.setNote(null);
+
+    }
+
 
     @Override
     public String toString() {
+
         return "Character{" +
                 "Name='" + Name + '\'' +
                 ", damage=" + damage +

@@ -9,25 +9,34 @@ public class Main {
 
         Character player = new Character("Bob");
         player.showCharacter();
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 
         ArrayList<Item> items = new ArrayList<>();
-        items.add(new Item("Axe",30,15,"Rusty"));
-        items.add(new Item("Sword",42,24,"Very old"));
+        items.add(new Item("Axe",30,15));
+        items.add(new Item("Sword",42,24));
         items.add(new Item("Shield",2,50));
         items.add(new Item("Helmet",0,35));
 
         Random random = new Random();
 
-        ArrayList<Item> emptyBoxListItem = new ArrayList<>();
+        ArrayList<Item> inventory = new ArrayList<>();
 
-        emptyBoxListItem.add(items.get(random.nextInt(items.size())));
-        emptyBoxListItem.add(items.get(random.nextInt(items.size())));
-       // Box box3 = new Box(emptyBoxListItem);
+        inventory.add(items.get(random.nextInt(items.size())));
+        inventory.add(items.get(random.nextInt(items.size())));
 
-        player.setItems(emptyBoxListItem);
+        player.setItems(inventory);
         player.showCharacter();
-        //box3.openBox();
+
+        System.out.println("XXXXXXXXXXXXXXXXXXXX <<< EQUIPPED ITEM >>> XXXXXXXXXXXXXXXXXXXX");
+        player.equipItem(inventory.get(0));
+
+        player.showCharacter();
+
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
+        player.unEquipItem(inventory.get(0));
+        player.showCharacter();
 
 
 
