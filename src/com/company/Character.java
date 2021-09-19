@@ -75,12 +75,22 @@ public class Character {
     @Override
     public String toString() {
 
-        return "Character{" +
-                "Name='" + Name + '\'' +
-                ", damage=" + damage +
-                ", defence=" + defence +
-                ", HP :: " + HP +
-                "\n" +" Inventor :: "+ "\n" + items +
-                '}';
+
+        if(items == null){
+            return "Character :: " +
+                    "Name = '" + Name + '\'' +
+                    ", Damage = " + damage +
+                    ", Defence = " + defence +
+                    ", HP :: " + HP +
+                    "\n";
+        }else {
+            return "Character :: " +
+                    "Name = '" + Name + '\'' +
+                    ", Damage = " + damage +
+                    ", Defence = " + defence +
+                    ", HP :: " + HP +
+                    "\n" +" Inventor :: "+ "\n" + items +
+                    ' ';
+        }
     }
 }
