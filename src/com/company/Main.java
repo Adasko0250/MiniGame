@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 
-        ArrayList<Item> items = new ArrayList<>();
+        List<Item> items = new ArrayList<>();
         items.add(new Item("Axe",30,15));
         items.add(new Item("Sword",42,24));
         items.add(new Item("Shield",2,50));
@@ -20,7 +21,7 @@ public class Main {
 
         Random random = new Random();
 
-        ArrayList<Item> inventory = new ArrayList<>();
+        List<Item> inventory = new ArrayList<>();
 
         inventory.add(items.get(random.nextInt(items.size())));
         inventory.add(items.get(random.nextInt(items.size())));

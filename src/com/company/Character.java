@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Character {
 
@@ -8,17 +8,17 @@ public class Character {
     private int damage = 25;
     private int defence = 20;
     private int HP = 500;
-    private ArrayList<Item> items;
+    private List<Item> items;
 
     public Character(String name) {
         Name = name;
     }
 
-    public ArrayList<Item> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
-    public void setItems(ArrayList<Item> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 
