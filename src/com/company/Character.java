@@ -8,18 +8,18 @@ public class Character {
     private int damage = 25;
     private int defence = 20;
     private int HP = 500;
-    private List<Item> items;
+    private List<Item> inventory;
 
     public Character(String name) {
         Name = name;
     }
 
-    public List<Item> getItems() {
-        return items;
+    public List<Item> getInventory() {
+        return inventory;
     }
 
-    public void setItems(List<Item> items) {
-        this.items = items;
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
     }
 
     public String getName() {
@@ -76,7 +76,7 @@ public class Character {
     public String toString() {
 
 
-        if(items == null){
+        if(inventory == null){
             return "Character :: " +
                     "Name = '" + Name + '\'' +
                     ", Damage = " + damage +
@@ -89,7 +89,7 @@ public class Character {
                     ", Damage = " + damage +
                     ", Defence = " + defence +
                     ", HP :: " + HP +
-                    "\n" +" Inventor :: "+ "\n" + items +
+                    "\n" +" Inventory :: "+ "\n" + inventory +
                     ' ';
         }
     }

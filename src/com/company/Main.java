@@ -21,22 +21,26 @@ public class Main {
 
         Random random = new Random();
 
+        Item item1 = items.get(random.nextInt(items.size()));
+        Item item2 = items.get(random.nextInt(items.size()));
+
         List<Item> inventory = new ArrayList<>();
+        inventory.add(item1);
+        inventory.add(item2);
 
-        inventory.add(items.get(random.nextInt(items.size())));
-        inventory.add(items.get(random.nextInt(items.size())));
-
-        player.setItems(inventory);
+        player.setInventory(inventory);
         player.showCharacter();
 
         System.out.println("XXXXXXXXXXXXXXXXXXXX <<< EQUIPPED ITEM >>> XXXXXXXXXXXXXXXXXXXX");
-        player.equipItem(inventory.get(0));
+        player.equipItem(item1);
+        player.equipItem(item2);
+
 
         player.showCharacter();
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-        player.unEquipItem(inventory.get(0));
+        player.unEquipItem(item1);
         player.showCharacter();
 
 
