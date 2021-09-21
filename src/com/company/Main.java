@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         Character player = new Character("Bob");
-        player.showCharacter();
+        System.out.println(player);
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 
@@ -29,19 +29,17 @@ public class Main {
         inventory.add(item2);
 
         player.setInventory(inventory);
-        player.showCharacter();
+        System.out.println(player);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXX <<< EQUIPPED ITEM >>> XXXXXXXXXXXXXXXXXXXX");
         player.equipItem(item1);
-        player.equipItem(item2);
 
-
-        player.showCharacter();
+        System.out.println(player);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         player.unEquipItem(item1);
-        player.showCharacter();
+        System.out.println(player);
 
 
 

@@ -54,10 +54,7 @@ public class Character {
         this.HP = HP;
     }
 
-    public void showCharacter()
-    {
-        System.out.println(this);
-    }
+
     public void equipItem(Item item){
         setDamage(item.getDamage()+getDamage());
         setDefence(item.getDefence()+getDefence());
@@ -71,11 +68,8 @@ public class Character {
 
     }
 
-
     @Override
     public String toString() {
-
-
         if(inventory == null){
             return "Character :: " +
                     "Name = '" + Name + '\'' +
