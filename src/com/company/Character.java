@@ -58,6 +58,7 @@ public class Character {
     public void equipItem(Item item){
         setDamage(item.getDamage()+getDamage());
         setDefence(item.getDefence()+getDefence());
+        item.setNote("eq");
     }
 
     public void unEquipItem(Item item){

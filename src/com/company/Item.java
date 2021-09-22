@@ -5,16 +5,33 @@ public class Item {
     private String name;
     private int damage;
     private int defence;
+    private String note;
 
-    public Item(){
+
+    public Item() {
 
     }
-    public Item (String name, int damage, int defence) {
+    public Item(Item item){
+       this.name = item.getName();
+       this.damage = item.getDamage();
+       this.defence = item.getDefence();
+       this.note = item.getNote();
+
+
+    }
+
+    public Item(String name, int damage, int defence) {
         this.name = name;
         this.damage = damage;
         this.defence = defence;
     }
 
+    public Item(String name, int damage, int defence, String note) {
+        this.name = name;
+        this.damage = damage;
+        this.defence = defence;
+        this.note = note;
+    }
 
 
     public int getDamage() {
@@ -41,10 +58,21 @@ public class Item {
         this.name = name;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+
     @Override
     public String toString() {
-
-        return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + ")" +"\n";
+        if (note == null) {
+            return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + ")" + "\n";
+        }
+        return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + ")" + note + "\n";
 
     }
 

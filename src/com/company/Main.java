@@ -21,8 +21,9 @@ public class Main {
 
         Random random = new Random();
 
-        Item item1 = items.get(random.nextInt(items.size()));
-        Item item2 = items.get(random.nextInt(items.size()));
+        Item item1 = new Item(items.get(random.nextInt(items.size())));
+        Item item2 = new Item(items.get(random.nextInt(items.size())));
+
 
         List<Item> inventory = new ArrayList<>();
         inventory.add(item1);
@@ -45,6 +46,7 @@ public class Main {
 
 
         player.unEquipItem(item1);
+
         System.out.println(player.getInventory());
         System.out.println(player);
 

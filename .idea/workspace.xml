@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="Little changes3.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Box.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Box.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Item.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Item.java" afterDir="false" />
