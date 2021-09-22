@@ -58,33 +58,22 @@ public class Character {
     public void equipItem(Item item){
         setDamage(item.getDamage()+getDamage());
         setDefence(item.getDefence()+getDefence());
-        item.setNote("Equipped");
-
     }
+
     public void unEquipItem(Item item){
         setDamage(getDamage()-item.getDamage());
         setDefence(getDefence()-item.getDefence());
-        item.setNote(null);
-
     }
+
 
     @Override
     public String toString() {
-        if(inventory == null){
             return "Character :: " +
                     "Name = '" + Name + '\'' +
                     ", Damage = " + damage +
                     ", Defence = " + defence +
                     ", HP :: " + HP +
                     "\n";
-        }else {
-            return "Character :: " +
-                    "Name = '" + Name + '\'' +
-                    ", Damage = " + damage +
-                    ", Defence = " + defence +
-                    ", HP :: " + HP +
-                    "\n" +" Inventory :: "+ "\n" + inventory +
-                    ' ';
-        }
+
     }
 }

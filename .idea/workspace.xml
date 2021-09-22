@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="Little changes2.">
+    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="Little changes3.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Box.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Box.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Box.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632184958441</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Little changes3.">
+      <created>1632267977581</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1632267977581</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -224,6 +232,7 @@
     <MESSAGE value="Add new character methods." />
     <MESSAGE value="Little changes." />
     <MESSAGE value="Little changes2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Little changes2." />
+    <MESSAGE value="Little changes3." />
+    <option name="LAST_COMMIT_MESSAGE" value="Little changes3." />
   </component>
 </project>

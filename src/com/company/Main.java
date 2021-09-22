@@ -27,19 +27,27 @@ public class Main {
         List<Item> inventory = new ArrayList<>();
         inventory.add(item1);
         inventory.add(item2);
-
         player.setInventory(inventory);
-        System.out.println(player);
 
-        System.out.println("XXXXXXXXXXXXXXXXXXXX <<< EQUIPPED ITEM >>> XXXXXXXXXXXXXXXXXXXX");
+
+        System.out.println(player.getInventory());
+
+        System.out.println(player);
+        System.out.println("XXXXXXXXXXXXXXXXXXXX <<< Inventory >>> XXXXXXXXXXXXXXXXXXXX");
+
+
         player.equipItem(item1);
 
-        System.out.println(player);
+        System.out.println(player.getInventory());
 
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println(player);
+        System.out.println("XXXXXXXXXXXXXXXXXXXX <<< Inventory >>> XXXXXXXXXXXXXXXXXXXX");
+
 
         player.unEquipItem(item1);
+        System.out.println(player.getInventory());
         System.out.println(player);
+
 
 
 
