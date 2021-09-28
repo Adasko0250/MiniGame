@@ -25,8 +25,10 @@ public class Inventory  extends Item{
 
     @Override
     public String toString() {
-        return "Inventory{" +
-                "inventory=" + inventory +
-                '}';
+       return
+               "XXXXXXXXXXXXXXXXXXXX <<< Inventory >>> XXXXXXXXXXXXXXXXXXXX" + "\n" +
+                "1. " + inventory.get(0) + "\n" +
+                "2. " + inventory.get(1) + "\n"
+                ;
     }
 }

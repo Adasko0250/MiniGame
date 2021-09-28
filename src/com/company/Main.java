@@ -10,7 +10,8 @@ public class Main {
 
         Character player = new Character("Bob");
         System.out.println(player);
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
 
 
         List<Item> items = new ArrayList<>();
@@ -25,30 +26,21 @@ public class Main {
         Item item2 = new Item(items.get(random.nextInt(items.size())));
 
 
-        List<Item> inventory = new ArrayList<>();
-        inventory.add(item1);
-        inventory.add(item2);
-        player.setInventory(inventory);
+        Inventory playerInventory = new Inventory( new ArrayList<>());
+        //System.out.println(playerInventory);
+
+        playerInventory.addItem(item1);
+        playerInventory.addItem(item2);
 
 
-        System.out.println(player.getInventory());
-
-        System.out.println(player);
-        System.out.println("XXXXXXXXXXXXXXXXXXXX <<< Inventory >>> XXXXXXXXXXXXXXXXXXXX");
+        System.out.println(playerInventory);
 
 
-        player.equipItem(item1);
-
-        System.out.println(player.getInventory());
-
-        System.out.println(player);
-        System.out.println("XXXXXXXXXXXXXXXXXXXX <<< Inventory >>> XXXXXXXXXXXXXXXXXXXX");
 
 
-        player.unEquipItem(item1);
 
-        System.out.println(player.getInventory());
-        System.out.println(player);
+
+
 
 
 

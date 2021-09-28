@@ -70,9 +70,9 @@ public class Item {
     @Override
     public String toString() {
         if (note == null) {
-            return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + ")" + "\n";
+            return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + "\n";
         }
-        return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + ")" + note + "\n";
+        return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + note + "\n";
 
     }
 
