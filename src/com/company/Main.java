@@ -24,16 +24,29 @@ public class Main {
 
         Item item1 = new Item(items.get(random.nextInt(items.size())));
         Item item2 = new Item(items.get(random.nextInt(items.size())));
+        Item item3 = new Item(items.get(random.nextInt(items.size())));
+        Item item4 = new Item(items.get(random.nextInt(items.size())));
+        Item item5 = new Item(items.get(random.nextInt(items.size())));
+        Item item6 = new Item(items.get(random.nextInt(items.size())));
+        Item item7 = new Item(items.get(random.nextInt(items.size())));
 
 
         Inventory playerInventory = new Inventory( new ArrayList<>());
-        //System.out.println(playerInventory);
+
 
         playerInventory.addItem(item1);
         playerInventory.addItem(item2);
+        playerInventory.addItem(item3);
+        playerInventory.addItem(item4);
+        playerInventory.addItem(item5);
+        playerInventory.addItem(item6);
 
+        playerInventory.addItem(item7);
 
         System.out.println(playerInventory);
+        playerInventory.removeItem(item2);
+        System.out.println(playerInventory);
+
 
 
 
