@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Character {
 
@@ -8,18 +8,18 @@ public class Character {
     private int damage = 25;
     private int defence = 20;
     private int HP = 500;
-    private ArrayList<Item> items;
+    private List<Item> inventory;
 
     public Character(String name) {
         Name = name;
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
+    public List<Item> getInventory() {
+        return inventory;
     }
 
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
+    public void setInventory(List<Item> inventory) {
+        this.inventory = inventory;
     }
 
     public String getName() {
@@ -54,18 +54,27 @@ public class Character {
         this.HP = HP;
     }
 
-    public void showCharcter(){
-        System.out.println(this);
+
+    public void equipItem(Item item){
+        setDamage(item.getDamage()+getDamage());
+        setDefence(item.getDefence()+getDefence());
+        item.setNote("eq");
     }
+
+    public void unEquipItem(Item item){
+        setDamage(getDamage()-item.getDamage());
+        setDefence(getDefence()-item.getDefence());
+    }
+
 
     @Override
     public String toString() {
-        return "Character{" +
-                "Name='" + Name + '\'' +
-                ", damage=" + damage +
-                ", defence=" + defence +
-                ", HP :: " + HP +
-                "\n" +" Inventor :: "+ "\n" + items +
-                '}';
+            return "Character :: " +
+                    "Name = '" + Name + '\'' +
+                    ", Damage = " + damage +
+                    ", Defence = " + defence +
+                    ", HP :: " + HP +
+                    "\n";
+
     }
 }

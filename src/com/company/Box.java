@@ -17,10 +17,6 @@ public class Box {
     }
 
 
-    public void openBox(){
-        System.out.println(this);
-    }
-
     @Override
     public String toString() {
         return "Box items: " + "\n"+
