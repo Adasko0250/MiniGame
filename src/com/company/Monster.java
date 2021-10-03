@@ -112,7 +112,7 @@ public class Monster {
     }
 
     public void missAttack(){
-        System.out.println(getName() + " miss attack");
+        System.out.println(getName() + " miss attack ! ");
 
     }
 
