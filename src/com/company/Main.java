@@ -10,10 +10,11 @@ public class Main {
     public static void main(String[] args) {
 
         Character player = new Character("Bob");
-        Monster monster = new Monster("RAT",47,5,25);
+        Monster monster = new Monster("RAT",47,15,50);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println(player);
+        System.out.println(monster);
 
 
 
@@ -65,11 +66,11 @@ public class Main {
         System.out.println(playerInventory);
         System.out.println(equippedItems);*/
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        System.out.println(player);
+
+        monster.checkHit(player);
+        player.criticalAttack(monster);
 
         System.out.println(monster);
-        monster.checkHit(player);
-
         System.out.println(player);
 
 

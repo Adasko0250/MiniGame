@@ -57,12 +57,12 @@ public class Monster {
     public void setInventory(List<Item> inventory) {
         this.inventory = inventory;
     }
+
     public void checkHit(Character character){
         Random random = new Random();
         int num = random.nextInt(6)+1;
-        System.out.println(num);
         switch (num){
-            case 1, 2, 3 -> missAttack(character);
+            case 1, 2, 3 -> missAttack();
             case 4, 5 -> attack(character);
             case 6 -> criticalAttack(character);
             default ->
@@ -72,7 +72,6 @@ public class Monster {
 
     public double checkDefMod(int specMod) {
         return switch (specMod) {
-            case 1, 2, 3, 4, 5, 6, 7, 8, 9 -> 2;
             case 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 -> 0.1;
             case 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 -> 0.2;
             case 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 -> 0.3;
@@ -82,34 +81,39 @@ public class Monster {
             default -> 0;
         };
     }
+
     public void attack(Character character){
         int charDEF = character.getDefence();
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage()*check);
         int dmg = (getDamage()-defMod);
-        //System.out.println("check " + check);
-       // System.out.println("defMod " + defMod);
-       // System.out.println("char def " + charDEF);
-        System.out.println("DMG : " + dmg);
-        character.setHP(character.getHP()-(getDamage()-defMod));
-        System.out.println("HIT !");
+
+        if(dmg >= character.getHP()){
+            character.setHP(0);
+            System.out.println(getName() + " hit " + character.getName() + " for " + dmg + " and kill " + character.getName());
+        }else {
+            System.out.println(getName() + " hit " + character.getName() + " for " + dmg);
+            character.setHP(character.getHP() - dmg);
+        }
     }
+
     public void criticalAttack(Character character){
         int charDEF = character.getDefence();
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage()*check);
-        int dmg = ((getDamage()-defMod))*2;
-        //System.out.println("check " + check);
-        //System.out.println("defMod " + defMod);
-        //System.out.println("char def " + charDEF);
-        System.out.println("DMG : " + dmg);
-        character.setHP(character.getHP()-((getDamage()-defMod))*2);
-        System.out.println("CRITICAL HIT !");
+        int dmg = ((getDamage()*2)-defMod);
+        if(dmg >= character.getHP()){
+            character.setHP(0);
+            System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg + " and kill " + character.getName());
+        }else {
+            System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg);
+            character.setHP(character.getHP() - dmg);
+        }
     }
-    public void missAttack(Character character){
-        setDamage(0);
-        character.setHP(character.getHP()-getDamage());
-        System.out.println("MISS !");
+
+    public void missAttack(){
+        System.out.println(getName() + " miss attack");
+
     }
 
 
