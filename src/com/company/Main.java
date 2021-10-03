@@ -6,11 +6,15 @@ import java.util.Random;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
         Character player = new Character("Bob");
-        System.out.println(player);
+        Monster monster = new Monster("RAT",47,5,25);
+
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println(player);
+
 
 
 
@@ -28,12 +32,14 @@ public class Main {
         Item item4 = new Item(items.get(random.nextInt(items.size())));
         Item item5 = new Item(items.get(random.nextInt(items.size())));
         Item item6 = new Item(items.get(random.nextInt(items.size())));
-        Item item7 = new Item(items.get(random.nextInt(items.size())));
+
+        //Item item7 = new Item(items.get(random.nextInt(items.size())));
 
 
-        Inventory playerInventory = new Inventory( new ArrayList<>());
+        Inventory playerInventory = new Inventory(new ArrayList<>());
+        EquippedItems equippedItems = new EquippedItems(new ArrayList<>());
 
-
+        /*
         playerInventory.addItem(item1);
         playerInventory.addItem(item2);
         playerInventory.addItem(item3);
@@ -41,11 +47,38 @@ public class Main {
         playerInventory.addItem(item5);
         playerInventory.addItem(item6);
 
-        playerInventory.addItem(item7);
+
+
+        //System.out.println(playerInventory);
+
+
+        equippedItems.addEqItem(item1);
+        equippedItems.addEqItem(item2);
+        equippedItems.addEqItem(item3);
+        equippedItems.addEqItem(item4);
+        player.equipItem(item1);
+        playerInventory.removeItem(item1);
+
+
+
 
         System.out.println(playerInventory);
-        playerInventory.removeItem(item2);
-        System.out.println(playerInventory);
+        System.out.println(equippedItems);*/
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        System.out.println(player);
+
+        System.out.println(monster);
+        monster.checkHit(player);
+
+        System.out.println(player);
+
+
+
+
+
+
+
+
 
 
 

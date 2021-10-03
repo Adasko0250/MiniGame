@@ -6,12 +6,22 @@ public class Character {
 
     private String Name;
     private int damage = 25;
-    private int defence = 20;
+    private int defence = 60;
     private int HP = 500;
     private List<Item> inventory;
+    private List<Item> equippedItems;
+
 
     public Character(String name) {
         Name = name;
+    }
+
+    public List<Item> getEquippedItems() {
+        return equippedItems;
+    }
+
+    public void setEquippedItems(List<Item> equippedItems) {
+        this.equippedItems = equippedItems;
     }
 
     public List<Item> getInventory() {
@@ -54,18 +64,17 @@ public class Character {
         this.HP = HP;
     }
 
-
     public void equipItem(Item item){
+
         setDamage(item.getDamage()+getDamage());
         setDefence(item.getDefence()+getDefence());
-        item.setNote("eq");
     }
 
     public void unEquipItem(Item item){
         setDamage(getDamage()-item.getDamage());
         setDefence(getDefence()-item.getDefence());
-    }
 
+    }
 
     @Override
     public String toString() {

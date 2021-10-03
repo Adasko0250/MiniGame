@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="Version 0.2">
-      <change afterPath="$PROJECT_DIR$/src/com/company/EquippedItems.java" afterDir="false" />
+    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/EquippedItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/EquippedItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/EquippedItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EquippedItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="char_methods" />
+        <entry key="$PROJECT_DIR$" value="day2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,6 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
@@ -235,7 +239,19 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="day2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
