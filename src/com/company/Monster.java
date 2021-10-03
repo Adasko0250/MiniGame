@@ -119,11 +119,10 @@ public class Monster {
 
     @Override
     public String toString() {
-        return "Monster{" +
-                "Name='" + Name + '\'' +
-                ", damage=" + damage +
-                ", defence=" + defence +
-                ", HP=" + HP +
-                '}';
+        return "Monster :: " +
+                "Name ='" + Name + '\'' +
+                ", Damage = " + damage +
+                ", Defence = " + defence +
+                ", HP :: " + HP ;
     }
 }

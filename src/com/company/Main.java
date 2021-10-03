@@ -16,9 +16,6 @@ public class Main {
         System.out.println(player);
         System.out.println(monster);
 
-
-
-
         List<Item> items = new ArrayList<>();
         items.add(new Item("Axe",30,15));
         items.add(new Item("Sword",42,24));
@@ -34,37 +31,10 @@ public class Main {
         Item item5 = new Item(items.get(random.nextInt(items.size())));
         Item item6 = new Item(items.get(random.nextInt(items.size())));
 
-        //Item item7 = new Item(items.get(random.nextInt(items.size())));
-
 
         Inventory playerInventory = new Inventory(new ArrayList<>());
         EquippedItems equippedItems = new EquippedItems(new ArrayList<>());
 
-        /*
-        playerInventory.addItem(item1);
-        playerInventory.addItem(item2);
-        playerInventory.addItem(item3);
-        playerInventory.addItem(item4);
-        playerInventory.addItem(item5);
-        playerInventory.addItem(item6);
-
-
-
-        //System.out.println(playerInventory);
-
-
-        equippedItems.addEqItem(item1);
-        equippedItems.addEqItem(item2);
-        equippedItems.addEqItem(item3);
-        equippedItems.addEqItem(item4);
-        player.equipItem(item1);
-        playerInventory.removeItem(item1);
-
-
-
-
-        System.out.println(playerInventory);
-        System.out.println(equippedItems);*/
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         monster.checkHit(player);

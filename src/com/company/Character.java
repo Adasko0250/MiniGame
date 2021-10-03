@@ -75,6 +75,7 @@ public class Character {
         setDefence(getDefence()-item.getDefence());
 
     }
+
     public void checkHit(Monster monster){
         Random random = new Random();
         int num = random.nextInt(6)+1;
@@ -139,8 +140,7 @@ public class Character {
                     "Name = '" + Name + '\'' +
                     ", Damage = " + damage +
                     ", Defence = " + defence +
-                    ", HP :: " + HP +
-                    "\n";
+                    ", HP :: " + HP ;
 
     }
 }
