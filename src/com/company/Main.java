@@ -9,6 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Random random = new Random();
         Character player = new Character("Bob");
         Monster monster = new Monster("RAT",47,15,50);
 
@@ -16,13 +17,24 @@ public class Main {
         System.out.println(player);
         System.out.println(monster);
 
+        Inventory playerInventory = new Inventory(new ArrayList<>());
+        EquippedItems equippedItems = new EquippedItems(new ArrayList<>());
+
         List<Item> items = new ArrayList<>();
         items.add(new Item("Axe",30,15));
         items.add(new Item("Sword",42,24));
         items.add(new Item("Shield",2,50));
         items.add(new Item("Helmet",0,35));
 
-        Random random = new Random();
+
+        Inventory monsterLoot = new Inventory(new ArrayList<>());
+        monsterLoot.addItem(new Item("Wodden Sword",10,5));
+        monsterLoot.addItem(new Item("Gold x 100"));
+
+        monster.setInventory(monsterLoot);
+
+
+
 
         Item item1 = new Item(items.get(random.nextInt(items.size())));
         Item item2 = new Item(items.get(random.nextInt(items.size())));
@@ -31,18 +43,40 @@ public class Main {
         Item item5 = new Item(items.get(random.nextInt(items.size())));
         Item item6 = new Item(items.get(random.nextInt(items.size())));
 
+        playerInventory.addItem(item1);
 
-        Inventory playerInventory = new Inventory(new ArrayList<>());
-        EquippedItems equippedItems = new EquippedItems(new ArrayList<>());
+
+
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         monster.checkHit(player);
-        player.criticalAttack(monster);
+        player.checkHit(monster);
 
-        System.out.println(monster);
         System.out.println(player);
+        System.out.println(monster);
 
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " +player.getName());
+
+        System.out.println(playerInventory);
+
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " +monster.getName());
+        player.openMonsterLoot(monster);
+
+
+        playerInventory.addItem(monsterLoot.getInventory().get(0));
+        playerInventory.addItem(monsterLoot.getInventory().get(1));
+
+        monsterLoot.removeItem(monsterLoot.getInventory().get(0));
+        monsterLoot.removeItem(monsterLoot.getInventory().get(0));
+
+
+
+
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " +player.getName());
+        System.out.println(playerInventory);
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " +monster.getName());
+        player.openMonsterLoot(monster);
 
 
 

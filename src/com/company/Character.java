@@ -9,7 +9,7 @@ public class Character {
     private int damage = 25;
     private int defence = 60;
     private int HP = 500;
-    private List<Item> inventory;
+    private Inventory inventory;
     private List<Item> equippedItems;
 
 
@@ -25,11 +25,11 @@ public class Character {
         this.equippedItems = equippedItems;
     }
 
-    public List<Item> getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(List<Item> inventory) {
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
 
@@ -105,13 +105,11 @@ public class Character {
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage()*check);
         int dmg = (getDamage()-defMod);
-
-        System.out.println(dmg);
         if(dmg >= monster.getHP()){
             monster.setHP(0);
-            System.out.println(getName() + " hit " + monster.getName() + " for " + dmg + " and kill " + monster.getName());
+            System.out.println(getName() + " hit " + monster.getName() + " for " + dmg + " HP and kill " + monster.getName());
         }else {
-            System.out.println(getName() + " hit " + monster.getName() + " for " + dmg);
+            System.out.println(getName() + " hit " + monster.getName() + " for " + dmg + " HP.");
             monster.setHP(monster.getHP() - dmg);
         }
     }
@@ -123,9 +121,9 @@ public class Character {
         int dmg = ((getDamage()*2)-defMod);
         if(dmg >= monster.getHP()){
             monster.setHP(0);
-            System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg +" and kill " + monster.getName() );
+            System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg +" HP and kill " + monster.getName() );
             }else{
-            System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg);
+            System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg + " HP.");
             monster.setHP(monster.getHP()-dmg);
         }
     }
@@ -133,6 +131,21 @@ public class Character {
     public void missAttack(){
         System.out.println(getName() + " miss attack ! ");
     }
+
+
+    public void openMonsterLoot(Monster monster){
+        Inventory loot = monster.getInventory();
+        if(loot == null){
+            System.out.println("EMPTY LOOT ");
+        }else
+        System.out.println(loot);
+
+    }
+    public void takeLoot(Monster monster){
+        Inventory loot = monster.getInventory();
+
+    }
+
 
     @Override
     public String toString() {

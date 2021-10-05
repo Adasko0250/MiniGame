@@ -9,7 +9,7 @@ public class Monster {
     private int damage;
     private int defence;
     private int HP;
-    private List<Item> inventory;
+    private Inventory inventory;
 
     public Monster (String name, int damage, int defence, int HP) {
         Name = name;
@@ -50,11 +50,11 @@ public class Monster {
         this.HP = HP;
     }
 
-    public List<Item> getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(List<Item> inventory) {
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
 
@@ -90,9 +90,9 @@ public class Monster {
 
         if(dmg >= character.getHP()){
             character.setHP(0);
-            System.out.println(getName() + " hit " + character.getName() + " for " + dmg + " and kill " + character.getName());
+            System.out.println(getName() + " hit " + character.getName() + " for " + dmg + " HP and kill " + character.getName());
         }else {
-            System.out.println(getName() + " hit " + character.getName() + " for " + dmg);
+            System.out.println(getName() + " hit " + character.getName() + " for " + dmg + " HP.");
             character.setHP(character.getHP() - dmg);
         }
     }
@@ -106,14 +106,13 @@ public class Monster {
             character.setHP(0);
             System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg + " and kill " + character.getName());
         }else {
-            System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg);
+            System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg + " HP.");
             character.setHP(character.getHP() - dmg);
         }
     }
 
     public void missAttack(){
         System.out.println(getName() + " miss attack ! ");
-
     }
 
 
