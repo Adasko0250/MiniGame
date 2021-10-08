@@ -11,15 +11,16 @@ public class Item {
     public Item() {
 
     }
+
     public Item(String name) {
         this.name = name;
     }
 
-    public Item(Item item){
-       this.name = item.getName();
-       this.damage = item.getDamage();
-       this.defence = item.getDefence();
-       this.note = item.getNote();
+    public Item(Item item) {
+        this.name = item.getName();
+        this.damage = item.getDamage();
+        this.defence = item.getDefence();
+        this.note = item.getNote();
 
 
     }
@@ -74,8 +75,8 @@ public class Item {
     public String toString() {
         if (note == null) {
             return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + "\n";
-        }else
-        return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + note + "\n";
+        } else
+            return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + note + "\n";
 
     }
 

@@ -2,13 +2,14 @@ package com.company;
 
 import java.util.List;
 
-public class EquippedItems extends Item{
+public class EquippedItems extends Item {
 
     private List<Item> eqItem;
 
-    public EquippedItems(){
+    public EquippedItems() {
 
     }
+
     public EquippedItems(List<Item> eqItem) {
         this.eqItem = eqItem;
     }
@@ -20,13 +21,15 @@ public class EquippedItems extends Item{
     public void setEqItem(List<Item> eqItem) {
         this.eqItem = eqItem;
     }
-    public void addEqItem(Item item){
-        if(eqItem.size() == 6 || eqItem.contains(item)){
+
+    public void addEqItem(Item item) {
+        if (eqItem.size() == 6 || eqItem.contains(item)) {
             System.out.println("Cant equip" + item.getName() + " !");
-        }else
-        eqItem.add(item);
+        } else
+            eqItem.add(item);
     }
-    public void removeEqItem(Item item){
+
+    public void removeEqItem(Item item) {
         eqItem.remove(item);
     }
 
