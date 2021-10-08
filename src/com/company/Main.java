@@ -44,7 +44,6 @@ public class Main {
         Item item6 = new Item(items.get(random.nextInt(items.size())));
 
         playerInventory.addItem(item1);
-        //equippedItems.addEqItem(item2);
         player.setEquippedItems(equippedItems);
 
 
@@ -79,10 +78,6 @@ public class Main {
         player.equipItem(playerInventory.getInventory().get(1), playerInventory,equippedItems);
 
 
-
-        /*player.equipItem(equippedItems.getEqItem().get(0));
-        System.out.println(player);
-        */
 
         System.out.println(playerInventory);
         System.out.println(equippedItems);
