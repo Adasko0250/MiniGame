@@ -37,7 +37,6 @@ public class Item {
         this.note = note;
     }
 
-
     public int getDamage() {
         return damage;
     }

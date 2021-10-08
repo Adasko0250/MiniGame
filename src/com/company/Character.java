@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.List;
+
 import java.util.Random;
 
 public class Character {
@@ -10,18 +10,18 @@ public class Character {
     private int defence = 60;
     private int HP = 500;
     private Inventory inventory;
-    private List<Item> equippedItems;
+    private EquippedItems equippedItems;
 
 
     public Character(String name) {
         Name = name;
     }
 
-    public List<Item> getEquippedItems() {
+    public EquippedItems getEquippedItems() {
         return equippedItems;
     }
 
-    public void setEquippedItems(List<Item> equippedItems) {
+    public void setEquippedItems(EquippedItems equippedItems) {
         this.equippedItems = equippedItems;
     }
 
@@ -65,15 +65,19 @@ public class Character {
         this.HP = HP;
     }
 
-    public void equipItem(Item item){
+    // move Item - from Inventory -> to EquippedItems
+    public void equipItem(Item item,Inventory inventory ,EquippedItems equippedItems){
+        equippedItems.addEqItem(item);
         setDamage(item.getDamage()+getDamage());
         setDefence(item.getDefence()+getDefence());
+        inventory.removeItem(item);
     }
-
-    public void unEquipItem(Item item){
+    // move Item - from EquippedItems -> to Inventory
+    public void unEquipItem(Item item,EquippedItems equippedItems,Inventory inventory){
+        equippedItems.removeEqItem(item);
         setDamage(getDamage()-item.getDamage());
         setDefence(getDefence()-item.getDefence());
-
+        inventory.addItem(item);
     }
 
     public void checkHit(Monster monster){
@@ -132,7 +136,6 @@ public class Character {
         System.out.println(getName() + " miss attack ! ");
     }
 
-
     public void openMonsterLoot(Monster monster){
         Inventory loot = monster.getInventory();
         if(loot == null){
@@ -141,8 +144,21 @@ public class Character {
         System.out.println(loot);
 
     }
-    public void takeLoot(Monster monster){
+
+    public void takeLoot(Monster monster, Inventory inventory){
         Inventory loot = monster.getInventory();
+        for (Item i: loot.getInventory()){
+            inventory.addItem(i);
+
+        }
+        loot.clearInventory();
+
+
+
+
+    }
+
+    public void testMet(){
 
     }
 
