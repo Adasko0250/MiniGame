@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.List;
 
-public class EquippedItems extends Inventory{
+public class EquippedItems extends Item{
 
     private List<Item> eqItem;
 

@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.List;
 
-public class Inventory  extends Item{
+public class Inventory extends Item{
     private List<Item> inventory;
 
     public Inventory() {
@@ -19,6 +19,7 @@ public class Inventory  extends Item{
     public void setInventory(List<Item> inventory) {
         this.inventory = inventory;
     }
+
     public void addItem(Item item){
         if(inventory.size() == 6){
             System.out.println("Cant add " + item.getName() + " to inventory! ");
