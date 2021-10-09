@@ -9,7 +9,7 @@ public class Monster {
     private int damage;
     private int defence;
     private int HP;
-    private Inventory inventory;
+    private MonsterLoot monsterloot;
 
     public Monster(String name, int damage, int defence, int HP) {
         Name = name;
@@ -50,12 +50,12 @@ public class Monster {
         this.HP = HP;
     }
 
-    public Inventory getInventory() {
-        return inventory;
+    public MonsterLoot getMonsterloot() {
+        return monsterloot;
     }
 
-    public void setInventory(Inventory inventory) {
-        this.inventory = inventory;
+    public void setMonsterloot(MonsterLoot monsterloot) {
+        this.monsterloot = monsterloot;
     }
 
     public void checkHit(Character character) {

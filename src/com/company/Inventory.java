@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.List;
 
-public class Inventory extends Item {
+public class Inventory  {
     private List<Item> inventory;
 
     public Inventory() {
@@ -32,7 +32,7 @@ public class Inventory extends Item {
 
     }
 
-    public void clearInventory() {
+    public void removeAllItems() {
         inventory.removeAll(getInventory());
     }
 

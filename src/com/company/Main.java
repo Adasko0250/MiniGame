@@ -27,11 +27,11 @@ public class Main {
         items.add(new Item("Helmet", 0, 35));
 
 
-        Inventory monsterLoot = new Inventory(new ArrayList<>());
+        MonsterLoot monsterLoot = new MonsterLoot(new ArrayList<>());
         monsterLoot.addItem(new Item("Wodden Sword", 10, 5));
         monsterLoot.addItem(new Item("Gold x 100"));
 
-        monster.setInventory(monsterLoot);
+        monster.setMonsterloot(monsterLoot);
 
 
         Item item1 = new Item(items.get(random.nextInt(items.size())));
@@ -47,37 +47,38 @@ public class Main {
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-        monster.checkHit(player);
-        player.checkHit(monster);
+        //monster.checkHit(player);
+        //player.checkHit(monster);
 
-        System.out.println(player);
-        System.out.println(monster);
-
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " + player.getName());
-
-        System.out.println(playerInventory);
-
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXX  LOOT XXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " + monster.getName());
-        player.openMonsterLoot(monster);
-
-        player.takeLoot(monster, playerInventory);
-
+        //System.out.println(player);
+        //System.out.println(monster);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " + player.getName());
+
         System.out.println(playerInventory);
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXX  LOOT XXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " + monster.getName());
+
         player.openMonsterLoot(monster);
 
-        System.out.println(equippedItems);
-        player.equipItem(playerInventory.getInventory().get(1), playerInventory, equippedItems);
+       // player.takeAllLoot(monster, playerInventory);
+        player.takeLoot(monster, playerInventory,1);
+
+
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + " " + player.getName());
+        System.out.println(playerInventory);
+        player.openMonsterLoot(monster);
+
+       // System.out.println(equippedItems);
+       // player.equipItem(playerInventory.getInventory().get(1), playerInventory, equippedItems);
 
 
         System.out.println(playerInventory);
-        System.out.println(equippedItems);
-        player.unEquipItem(equippedItems.getEqItem().get(0), equippedItems, playerInventory);
+       // System.out.println(equippedItems);
+        //player.unEquipItem(equippedItems.getEqItem().get(0), equippedItems, playerInventory);
 
-        System.out.println(playerInventory);
-        System.out.println(equippedItems);
+       // System.out.println(playerInventory);
+       // System.out.println(equippedItems);
+
+
 
 
     }

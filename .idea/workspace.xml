@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="HOT FIX 1.11">
+    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="HOT FIX - text format">
+      <change afterPath="$PROJECT_DIR$/src/com/company/MonsterLoot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/EquippedItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/EquippedItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Inventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Inventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Monster.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/EquippedItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EquippedItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Monster.java" afterDir="false" />
     </list>
@@ -261,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633735337206</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="HOT FIX - text format">
+      <created>1633736120384</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1633736120384</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -344,6 +356,7 @@
     <MESSAGE value="HOT FIX 1" />
     <MESSAGE value="HOT FIX 1.1" />
     <MESSAGE value="HOT FIX 1.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="HOT FIX 1.11" />
+    <MESSAGE value="HOT FIX - text format" />
+    <option name="LAST_COMMIT_MESSAGE" value="HOT FIX - text format" />
   </component>
 </project>

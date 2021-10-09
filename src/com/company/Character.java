@@ -137,7 +137,7 @@ public class Character {
     }
 
     public void openMonsterLoot(Monster monster) {
-        Inventory loot = monster.getInventory();
+        MonsterLoot loot = monster.getMonsterloot();
         if (loot == null) {
             System.out.println("EMPTY LOOT ");
         } else
@@ -145,13 +145,20 @@ public class Character {
 
     }
 
-    public void takeLoot(Monster monster, Inventory inventory) {
-        Inventory loot = monster.getInventory();
-        for (Item i : loot.getInventory()) {
+    public void takeAllLoot(Monster monster, Inventory inventory) {
+        MonsterLoot loot = monster.getMonsterloot();
+        for (Item i : loot.getMonsterloot()) {
             inventory.addItem(i);
         }
-        loot.clearInventory();
+        loot.removeAllItems();
     }
+
+    public void takeLoot(Monster monster, Inventory inventory, int position) {
+        MonsterLoot loot = monster.getMonsterloot();
+        inventory.addItem(loot.getMonsterloot().get(position));
+        loot.removeItem(monster.getMonsterloot().getMonsterloot().get(position));
+    }
+
 
     public void testMet() {
 
