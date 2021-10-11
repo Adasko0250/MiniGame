@@ -9,6 +9,7 @@ public class Character {
     private int damage = 25;
     private int defence = 60;
     private int HP = 500;
+    private int gold = 0;
     private Inventory inventory;
     private EquippedItems equippedItems;
 
@@ -63,6 +64,14 @@ public class Character {
 
     public void setHP(int HP) {
         this.HP = HP;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 
     // move Item - from Inventory -> to EquippedItems
@@ -155,7 +164,12 @@ public class Character {
 
     public void takeLoot(Monster monster, Inventory inventory, int position) {
         MonsterLoot loot = monster.getMonsterloot();
-        inventory.addItem(loot.getMonsterloot().get(position));
+        if (loot.getMonsterloot().get(position).getName().equals("Gold x")) {
+            int i = loot.getMonsterloot().get(position).getValue();
+            setGold(getGold() + i);
+            inventory.removeItem(loot.getMonsterloot().get(position));
+        } else
+            inventory.addItem(loot.getMonsterloot().get(position));
         loot.removeItem(monster.getMonsterloot().getMonsterloot().get(position));
     }
 
@@ -171,6 +185,7 @@ public class Character {
                 "Name = '" + Name + '\'' +
                 ", Damage = " + damage +
                 ", Defence = " + defence +
+                ", GOLD = " + gold +
                 ", HP :: " + HP;
 
     }

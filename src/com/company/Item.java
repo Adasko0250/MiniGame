@@ -6,10 +6,15 @@ public class Item {
     private int damage;
     private int defence;
     private String note;
-
+    private int value;
 
     public Item() {
 
+    }
+
+    public Item(String name, int value) {
+        this.value = value;
+        this.name = name;
     }
 
     public Item(String name) {
@@ -21,8 +26,17 @@ public class Item {
         this.damage = item.getDamage();
         this.defence = item.getDefence();
         this.note = item.getNote();
+        this.value = item.getValue();
 
 
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public Item(String name, int damage, int defence) {
@@ -73,10 +87,13 @@ public class Item {
 
     @Override
     public String toString() {
+        if (name.equals("Gold x")) {
+            return "----- " + name.toUpperCase() + " " + value + " ----- " + "\n";
+        }
         if (note == null) {
             return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + "\n";
-        } else
-            return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + note + "\n";
+        }
+        return "----- " + name.toUpperCase() + " ----- " + " Damage: " + damage + ", Defence: " + defence + " ---- " + note + "\n";
 
     }
 
