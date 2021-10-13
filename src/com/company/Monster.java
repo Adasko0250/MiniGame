@@ -9,13 +9,15 @@ public class Monster {
     private int damage;
     private int defence;
     private int HP;
+    private int experience;
     private MonsterLoot monsterloot;
 
-    public Monster(String name, int damage, int defence, int HP) {
+    public Monster(String name, int damage, int defence, int HP,int experience) {
         Name = name;
         this.damage = damage;
         this.defence = defence;
         this.HP = HP;
+        this.experience = experience;
     }
 
     public String getName() {
@@ -48,6 +50,14 @@ public class Monster {
 
     public void setHP(int HP) {
         this.HP = HP;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
     public MonsterLoot getMonsterloot() {
@@ -121,6 +131,7 @@ public class Monster {
                 "Name ='" + Name + '\'' +
                 ", Damage = " + damage +
                 ", Defence = " + defence +
-                ", HP :: " + HP;
+                ", HP :: " + HP +
+                ", EXP ::" + experience;
     }
 }
