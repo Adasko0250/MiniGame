@@ -11,7 +11,7 @@ public class Main {
 
         Random random = new Random();
         Character player = new Character("Bob");
-        Monster rat = new Monster("RAT", 47, 15, 20, 1500);
+        Monster rat = new Monster("RAT", 47, 15, 20, 120);
         Monster skeleton = new Monster("Skeleton", 47, 15, 20, 451);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -47,7 +47,7 @@ public class Main {
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 
-        //player.checkHit(rat);
+        player.checkHit(rat);
         player.checkHit(skeleton);
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
@@ -77,6 +77,9 @@ public class Main {
 
         //System.out.println(player);
         //player.test2();
+        System.out.println(player);
+        player.checkHit(rat);
+        player.checkHit(skeleton);
         System.out.println(player);
 
 

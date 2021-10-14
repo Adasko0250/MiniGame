@@ -226,7 +226,7 @@ public class Character {
         }
         return gainlvl;
     }
-
+//not working
     public void checkLvL() {
         HashMap<Integer, Integer> levelUp = lvlList();
         HashMap<Integer, Integer> hpBoost = hpBoost();
