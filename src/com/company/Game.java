@@ -1,18 +1,31 @@
 package com.company;
 
+import com.company.level.Level;
+import com.company.level.LevelDataStore;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Main {
+public class Game extends JFrame {
+
+    public Game(){
+        setSize(400,400);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+    }
 
 
     public static void main(String[] args) {
 
+        Game game = new Game();
         Random random = new Random();
         Character player = new Character("Bob");
         Monster rat = new Monster("RAT", 47, 15, 20, 120);
-        Monster skeleton = new Monster("Skeleton", 47, 15, 20, 451);
+        Monster skeleton = new Monster("Skeleton", 500, 15, 20, 100);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println(player);
@@ -49,7 +62,14 @@ public class Main {
 
         player.checkHit(rat);
         player.checkHit(skeleton);
+        player.checkHit(skeleton);
+        player.checkHit(skeleton);
+        player.checkHit(skeleton);
+        player.checkHit(skeleton);
+
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+
+        skeleton.checkHit(player);
 
 
        // player.openMonsterLoot(rat);
@@ -67,22 +87,14 @@ public class Main {
         System.out.println(playerInventory);
         System.out.println(equippedItems); */
 
-
-       // player.openMonsterLoot(rat);
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-
-
-
-
-        //System.out.println(player);
-        //player.test2();
         System.out.println(player);
         player.checkHit(rat);
         player.checkHit(skeleton);
         System.out.println(player);
 
-
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
 
 

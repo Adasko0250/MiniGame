@@ -1,7 +1,11 @@
 package com.company;
 
 
+import com.company.level.Level;
+import com.company.level.LevelDataStore;
+
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.Random;
 
 public class Character {
@@ -98,7 +102,7 @@ public class Character {
         return lvlgate;
     }
 
-    public void setLvlgate(int lvlgate) {
+    public void setLvlGate(int lvlgate) {
         this.lvlgate = lvlgate;
     }
 
@@ -149,8 +153,8 @@ public class Character {
         if (dmg >= monster.getHP()) {
             monster.setHP(0);
             setExperience(getExperience() + monster.getExperience());
-            checkLvL();
-            System.out.println(getName() + " hit " + monster.getName() + " for " + dmg + " HP and kill " + monster.getName() + "."+ getName() +" gain " + monster.getExperience() + " exp.");
+            checkLevelUp();
+            System.out.println(getName() + " hit " + monster.getName() + " for " + dmg + " HP and kill " + monster.getName() + "." + getName() + " gain " + monster.getExperience() + " exp.");
         } else {
             System.out.println(getName() + " hit " + monster.getName() + " for " + dmg + " HP.");
             monster.setHP(monster.getHP() - dmg);
@@ -165,8 +169,8 @@ public class Character {
         if (dmg >= monster.getHP()) {
             monster.setHP(0);
             setExperience(getExperience() + monster.getExperience());
-            checkLvL();
-            System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg + " HP and kill " + monster.getName()+ "."+ getName() +" gain " + monster.getExperience() + " exp.");
+            checkLevelUp();
+            System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg + " HP and kill " + monster.getName() + "." + getName() + " gain " + monster.getExperience() + " exp.");
         } else {
             System.out.println(getName() + " critical hit " + monster.getName() + " for " + dmg + " HP.");
             monster.setHP(monster.getHP() - dmg);
@@ -226,99 +230,148 @@ public class Character {
         }
         return gainlvl;
     }
-//not working
+
+    void checkLevelUp() {
+        Optional<Level> levelOptional = findLevelByExp();
+        if (levelOptional.isPresent()) {
+            Level level = levelOptional.get();
+            setHpOnCheck(level);
+            if (level.getLvl() > this.lvl) {
+                if (this.experience > LevelDataStore.FIRST_LEVEL_EXPERIENCE) {
+                    setLvl(level.getLvl());
+                    setLvlGate(level.getRange().getUpperBound());
+                }
+            }
+        }
+    }
+
+    private Optional<Level> findLevelByExp() {
+        Optional<Level> first = LevelDataStore.Levels.stream()
+                .filter(lvl ->
+                        lvl.getRange().getLowerBound() < this.experience &&
+                                lvl.getRange().getUpperBound() > this.experience)
+                .findFirst();
+        return first;
+    }
+
+    private void setHpOnCheck(Level level) {
+        int levelDifference = level.getLvl() - this.lvl;
+        if (levelDifference >= 1) {
+            for (int i = 0; i < levelDifference; i++) {
+                Level lvl = LevelDataStore.Levels.get(level.getLvl() - i - 1);
+                setHP(lvl.getHpBoost() + this.HP);
+            }
+        }
+    }
+
     public void checkLvL() {
         HashMap<Integer, Integer> levelUp = lvlList();
         HashMap<Integer, Integer> hpBoost = hpBoost();
 
         if (getExperience() >= levelUp.get(1) && getExperience() < levelUp.get(2)) {
             setLvl(1);
-            setHP(getHP() + hpBoost.get(1));
-            setLvlgate(levelUp.get(2));
-            setExperience(getExperience()-levelUp.get(1));
+            setLvlGate(levelUp.get(2));
+            if (getHP() == 520) {
+
+            } else {
+                setHP(getHP() + hpBoost.get(1));
+            }
+
         }
         if (getExperience() >= levelUp.get(2) && getExperience() < levelUp.get(3)) {
             setLvl(2);
             setHP(getHP() + hpBoost.get(2));
-            setLvlgate(levelUp.get(3));
-            setExperience(getExperience()-levelUp.get(2));
+            setLvlGate(levelUp.get(3));
         }
         if (getExperience() >= levelUp.get(3) && getExperience() < levelUp.get(4)) {
             setLvl(3);
             setHP(getHP() + hpBoost.get(3));
-            setLvlgate(levelUp.get(4));
-            setExperience(getExperience()-levelUp.get(3));
+            setLvlGate(levelUp.get(4));
         }
         if (getExperience() >= levelUp.get(4) && getExperience() < levelUp.get(5)) {
             setLvl(4);
-            setHP(getHP() + hpBoost.get(4));
+            setHP(getHP() + hpBoost.get(5));
         }
         if (getExperience() >= levelUp.get(5) && getExperience() < levelUp.get(6)) {
             setLvl(5);
             setHP(getHP() + hpBoost.get(5));
+            setLvlGate(levelUp.get(6));
         }
-        if (getExperience() >= levelUp.get(6)) {
+        if (getExperience() >= levelUp.get(6) && getExperience() < levelUp.get(7)) {
             setLvl(6);
             setHP(getHP() + hpBoost.get(6));
+            setLvlGate(levelUp.get(7));
         }
-        if (getExperience() >= levelUp.get(7)) {
+        if (getExperience() >= levelUp.get(7) && getExperience() < levelUp.get(8)) {
             setLvl(7);
             setHP(getHP() + hpBoost.get(7));
+            setLvlGate(levelUp.get(8));
         }
-        if (getExperience() >= levelUp.get(8)) {
+        if (getExperience() >= levelUp.get(8) && getExperience() < levelUp.get(9)) {
             setLvl(8);
             setHP(getHP() + hpBoost.get(8));
+            setLvlGate(levelUp.get(9));
         }
-        if (getExperience() >= levelUp.get(9)) {
+        if (getExperience() >= levelUp.get(9) && getExperience() < levelUp.get(10)) {
             setLvl(9);
             setHP(getHP() + hpBoost.get(9));
+            setLvlGate(levelUp.get(10));
         }
-        if (getExperience() >= levelUp.get(10)) {
+        if (getExperience() >= levelUp.get(10) && getExperience() < levelUp.get(11)) {
             setLvl(10);
             setHP(getHP() + hpBoost.get(10));
+            setLvlGate(levelUp.get(11));
         }
-        if (getExperience() >= levelUp.get(11)) {
+        if (getExperience() >= levelUp.get(11) && getExperience() < levelUp.get(12)) {
             setLvl(11);
             setHP(getHP() + hpBoost.get(11));
+            setLvlGate(levelUp.get(12));
         }
-        if (getExperience() >= levelUp.get(12)) {
+        if (getExperience() >= levelUp.get(12) && getExperience() < levelUp.get(13)) {
             setLvl(12);
             setHP(getHP() + hpBoost.get(12));
+            setLvlGate(levelUp.get(13));
         }
-        if (getExperience() >= levelUp.get(13)) {
+        if (getExperience() >= levelUp.get(13) && getExperience() < levelUp.get(14)) {
             setLvl(13);
             setHP(getHP() + hpBoost.get(13));
+            setLvlGate(levelUp.get(14));
         }
-        if (getExperience() >= levelUp.get(14)) {
+        if (getExperience() >= levelUp.get(14) && getExperience() < levelUp.get(15)) {
             setLvl(14);
             setHP(getHP() + hpBoost.get(14));
+            setLvlGate(levelUp.get(15));
         }
-        if (getExperience() >= levelUp.get(15)) {
+        if (getExperience() >= levelUp.get(15) && getExperience() < levelUp.get(16)) {
             setLvl(15);
             setHP(getHP() + hpBoost.get(15));
+            setLvlGate(levelUp.get(16));
         }
-        if (getExperience() >= levelUp.get(16)) {
+        if (getExperience() >= levelUp.get(16) && getExperience() < levelUp.get(17)) {
             setLvl(16);
             setHP(getHP() + hpBoost.get(16));
+            setLvlGate(levelUp.get(17));
         }
-        if (getExperience() >= levelUp.get(17)) {
+        if (getExperience() >= levelUp.get(17) && getExperience() < levelUp.get(18)) {
             setLvl(17);
             setHP(getHP() + hpBoost.get(17));
+            setLvlGate(levelUp.get(18));
         }
-        if (getExperience() >= levelUp.get(18)) {
+        if (getExperience() >= levelUp.get(18) && getExperience() < levelUp.get(19)) {
             setLvl(18);
             setHP(getHP() + hpBoost.get(18));
+            setLvlGate(levelUp.get(19));
         }
-        if (getExperience() >= levelUp.get(19)) {
+        if (getExperience() >= levelUp.get(19) && getExperience() < levelUp.get(20)) {
             setLvl(19);
             setHP(getHP() + hpBoost.get(19));
+            setLvlGate(levelUp.get(20));
         }
         if (getExperience() >= levelUp.get(20)) {
             setLvl(20);
             setHP(getHP() + hpBoost.get(20));
+            setLvlGate(levelUp.get(20));
         }
-
-
     }
 
 
@@ -333,7 +386,7 @@ public class Character {
     }
 
 
-    public void test2(){
+    public void test2() {
 
 
     }

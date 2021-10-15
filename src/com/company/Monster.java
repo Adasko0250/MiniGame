@@ -79,7 +79,7 @@ public class Monster {
         }
     }
 
-    public double checkDefMod(int specMod) {
+    private double checkDefMod(int specMod) {
         return switch (specMod) {
             case 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 -> 0.1;
             case 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 -> 0.2;
@@ -91,7 +91,7 @@ public class Monster {
         };
     }
 
-    public void attack(Character character) {
+    private void attack(Character character) {
         int charDEF = character.getDefence();
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage() * check);
@@ -106,7 +106,7 @@ public class Monster {
         }
     }
 
-    public void criticalAttack(Character character) {
+    private void criticalAttack(Character character) {
         int charDEF = character.getDefence();
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage() * check);
@@ -120,7 +120,7 @@ public class Monster {
         }
     }
 
-    public void missAttack() {
+    private void missAttack() {
         System.out.println(getName() + " miss attack ! ");
     }
 
