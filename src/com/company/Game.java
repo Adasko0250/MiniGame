@@ -1,7 +1,10 @@
 package com.company;
 
-import com.company.level.Level;
-import com.company.level.LevelDataStore;
+import com.company.monsters.Monster;
+import com.company.monsters.MonsterItems;
+import com.company.player.EquippedItems;
+import com.company.player.Inventory;
+import com.company.player.Player;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -10,22 +13,26 @@ import java.util.Random;
 
 public class Game extends JFrame {
 
-    public Game(){
-        setSize(400,400);
+    private GameScreen gameScreen;
+
+    public Game() {
+        setSize(400, 400);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        gameScreen = new GameScreen();
+        add(gameScreen);
 
     }
 
 
     public static void main(String[] args) {
 
-        Game game = new Game();
+        //Game game = new Game();
         Random random = new Random();
-        Character player = new Character("Bob");
-        Monster rat = new Monster("RAT", 47, 15, 20, 120);
-        Monster skeleton = new Monster("Skeleton", 500, 15, 20, 100);
+        Player player = new Player("Bob");
+        Monster rat = new Monster("RAT", 47, 15, 10, 120);
+        Monster skeleton = new Monster("Skeleton", 50, 15, 20, 100);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println(player);
@@ -47,7 +54,7 @@ public class Game extends JFrame {
         monRatLoot.add(new Item("Wodden Shield", 0, 5));
 
 
-        MonsterLoot ratLoot = new MonsterLoot(new ArrayList<>());
+        MonsterItems ratLoot = new MonsterItems(new ArrayList<>());
         ratLoot.addItem(new Item("Gold x", random.nextInt(6) + 1));
         ratLoot.addItem(new Item(monRatLoot.get(random.nextInt(monRatLoot.size()))));
         ratLoot.addItem(new Item(monRatLoot.get(random.nextInt(monRatLoot.size()))));
@@ -55,47 +62,42 @@ public class Game extends JFrame {
 
 
         player.setEquippedItems(equippedItems);
+        player.setInventory(playerInventory);
+        playerInventory.addItem(items.get(0));
+        playerInventory.addItem(items.get(1));
 
 
-        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-
-
-        player.checkHit(rat);
-        player.checkHit(skeleton);
-        player.checkHit(skeleton);
-        player.checkHit(skeleton);
-        player.checkHit(skeleton);
-        player.checkHit(skeleton);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        player.checkHit(rat, player);
+        player.checkHit(skeleton, player);
+        System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-        skeleton.checkHit(player);
+        player.openMonsterLoot(rat);
 
 
-       // player.openMonsterLoot(rat);
+        player.takeLoot(rat, playerInventory, 0,player);
 
-        // player.takeAllLoot(monster, playerInventory);
-       // player.takeLoot(rat, playerInventory, 0);
+        player.openMonsterLoot(rat);
 
-        //player.openMonsterLoot(rat);
-        //player.takeLoot(rat, playerInventory, 0);
-
-        /* System.out.println(equippedItems);
-        player.equipItem(playerInventory.getInventory().get(1), playerInventory, equippedItems);
         System.out.println(equippedItems);
-        player.unEquipItem(equippedItems.getEqItem().get(0), equippedItems, playerInventory);
         System.out.println(playerInventory);
-        System.out.println(equippedItems); */
+
+        player.equipItem(playerInventory.getInventory().get(1), playerInventory, equippedItems,player);
+        System.out.println(equippedItems);
+
+        //player.unEquipItem(equippedItems.getEqItem().get(0), equippedItems, playerInventory,player);
+        System.out.println(playerInventory);
+
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         System.out.println(player);
-        player.checkHit(rat);
-        player.checkHit(skeleton);
+        player.checkHit(rat, player);
+        player.checkHit(skeleton, player);
         System.out.println(player);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-
 
 
     }

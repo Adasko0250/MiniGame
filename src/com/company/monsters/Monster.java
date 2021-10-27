@@ -1,5 +1,7 @@
-package com.company;
+package com.company.monsters;
 
+
+import com.company.player.Player;
 
 import java.util.Random;
 
@@ -10,7 +12,7 @@ public class Monster {
     private int defence;
     private int HP;
     private int experience;
-    private MonsterLoot monsterloot;
+    private MonsterItems monsterloot;
 
     public Monster(String name, int damage, int defence, int HP,int experience) {
         Name = name;
@@ -60,21 +62,21 @@ public class Monster {
         this.experience = experience;
     }
 
-    public MonsterLoot getMonsterloot() {
+    public MonsterItems getMonsterloot() {
         return monsterloot;
     }
 
-    public void setMonsterloot(MonsterLoot monsterloot) {
+    public void setMonsterloot(MonsterItems monsterloot) {
         this.monsterloot = monsterloot;
     }
 
-    public void checkHit(Character character) {
+    public void checkHit(Player player) {
         Random random = new Random();
         int num = random.nextInt(6) + 1;
         switch (num) {
             case 1, 2, 3 -> missAttack();
-            case 4, 5 -> attack(character);
-            case 6 -> criticalAttack(character);
+            case 4, 5 -> attack(player);
+            case 6 -> criticalAttack(player);
             default -> throw new IllegalStateException("Unexpected value: " + num);
         }
     }
@@ -91,32 +93,32 @@ public class Monster {
         };
     }
 
-    private void attack(Character character) {
-        int charDEF = character.getDefence();
+    private void attack(Player player) {
+        int charDEF = player.getDefence();
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage() * check);
         int dmg = (getDamage() - defMod);
 
-        if (dmg >= character.getHP()) {
-            character.setHP(0);
-            System.out.println(getName() + " hit " + character.getName() + " for " + dmg + " HP and kill " + character.getName());
+        if (dmg >= player.getHP()) {
+            player.setHP(0);
+            System.out.println(getName() + " hit " + player.getName() + " for " + dmg + " HP and kill " + player.getName());
         } else {
-            System.out.println(getName() + " hit " + character.getName() + " for " + dmg + " HP.");
-            character.setHP(character.getHP() - dmg);
+            System.out.println(getName() + " hit " + player.getName() + " for " + dmg + " HP.");
+            player.setHP(player.getHP() - dmg);
         }
     }
 
-    private void criticalAttack(Character character) {
-        int charDEF = character.getDefence();
+    private void criticalAttack(Player player) {
+        int charDEF = player.getDefence();
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage() * check);
         int dmg = ((getDamage() * 2) - defMod);
-        if (dmg >= character.getHP()) {
-            character.setHP(0);
-            System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg + " and kill " + character.getName());
+        if (dmg >= player.getHP()) {
+            player.setHP(0);
+            System.out.println(getName() + " critical hit " + player.getName() + " for " + dmg + " and kill " + player.getName());
         } else {
-            System.out.println(getName() + " critical hit " + character.getName() + " for " + dmg + " HP.");
-            character.setHP(character.getHP() - dmg);
+            System.out.println(getName() + " critical hit " + player.getName() + " for " + dmg + " HP.");
+            player.setHP(player.getHP() - dmg);
         }
     }
 
