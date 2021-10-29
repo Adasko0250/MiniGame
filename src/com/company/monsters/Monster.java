@@ -99,12 +99,12 @@ public class Monster {
         int defMod = (int) (getDamage() * check);
         int dmg = (getDamage() - defMod);
 
-        if (dmg >= player.getHP()) {
-            player.setHP(0);
+        if (dmg >= player.getBoostedHP()) {
+            player.setBoostedHP(0);
             System.out.println(getName() + " hit " + player.getName() + " for " + dmg + " HP and kill " + player.getName());
         } else {
             System.out.println(getName() + " hit " + player.getName() + " for " + dmg + " HP.");
-            player.setHP(player.getHP() - dmg);
+            player.setBaseHP(player.getBaseHP() - dmg);
         }
     }
 
@@ -113,12 +113,13 @@ public class Monster {
         double check = checkDefMod(charDEF);
         int defMod = (int) (getDamage() * check);
         int dmg = ((getDamage() * 2) - defMod);
-        if (dmg >= player.getHP()) {
-            player.setHP(0);
+        if (dmg >= player.getBoostedHP()) {
+            player.setBoostedHP(0);
             System.out.println(getName() + " critical hit " + player.getName() + " for " + dmg + " and kill " + player.getName());
         } else {
             System.out.println(getName() + " critical hit " + player.getName() + " for " + dmg + " HP.");
-            player.setHP(player.getHP() - dmg);
+            //player.setBoostedHP(player.getBoostedHP() - dmg);
+            player.setBaseHP(player.getBaseHP() - dmg);
         }
     }
 

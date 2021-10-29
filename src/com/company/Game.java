@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.menagers.PlayerMenager;
 import com.company.monsters.Monster;
 import com.company.monsters.MonsterItems;
 import com.company.player.EquippedItems;
@@ -31,8 +32,10 @@ public class Game extends JFrame {
         //Game game = new Game();
         Random random = new Random();
         Player player = new Player("Bob");
-        Monster rat = new Monster("RAT", 47, 15, 10, 120);
-        Monster skeleton = new Monster("Skeleton", 50, 15, 20, 100);
+        PlayerMenager playerMenager = new PlayerMenager();
+
+        Monster rat = new Monster("RAT", 47, 15, 10, 450);
+        Monster skeleton = new Monster("Skeleton", 50, 15, 20, 1500);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println(player);
@@ -61,44 +64,46 @@ public class Game extends JFrame {
         rat.setMonsterloot(ratLoot);
 
 
-        player.setEquippedItems(equippedItems);
-        player.setInventory(playerInventory);
-        playerInventory.addItem(items.get(0));
-        playerInventory.addItem(items.get(1));
+        //player.setEquippedItems(equippedItems);
+        //player.setInventory(playerInventory);
+       // playerInventory.addItem(items.get(0));
+        //playerInventory.addItem(items.get(1));
 
 
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-        player.checkHit(rat, player);
-        player.checkHit(skeleton, player);
+        playerMenager.checkHit(rat, player);
+        //player.checkHit(skeleton, player);
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-        player.openMonsterLoot(rat);
+        //playerMenager.openMonsterLoot(rat);
 
 
-        player.takeLoot(rat, playerInventory, 0,player);
+        //playerMenager.takeLoot(rat, playerInventory, 0,player);
 
-        player.openMonsterLoot(rat);
+       // playerMenager.openMonsterLoot(rat);
 
-        System.out.println(equippedItems);
-        System.out.println(playerInventory);
+       // System.out.println(equippedItems);
+        //System.out.println(playerInventory);
 
-        player.equipItem(playerInventory.getInventory().get(1), playerInventory, equippedItems,player);
-        System.out.println(equippedItems);
+        //playerMenager.equipItem(playerInventory.getInventory().get(1), playerInventory, equippedItems,player);
+       // System.out.println(equippedItems);
 
-        //player.unEquipItem(equippedItems.getEqItem().get(0), equippedItems, playerInventory,player);
-        System.out.println(playerInventory);
-
+        //playerMenager.unEquipItem(equippedItems.getEqItem().get(0), equippedItems, playerInventory,player);
+       // System.out.println(playerInventory);
+        System.out.println(playerMenager.hpBoost());
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
         System.out.println(player);
-        player.checkHit(rat, player);
-        player.checkHit(skeleton, player);
+        playerMenager.checkHit(rat, player);
+        playerMenager.checkHit(skeleton, player);
         System.out.println(player);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
+        rat.checkHit(player);
+        System.out.println(player);
 
     }
 }

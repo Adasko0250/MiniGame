@@ -1,19 +1,12 @@
 package com.company.player;
 
-import com.company.level.Level;
-import com.company.level.LevelDataStore;
-import com.company.menagers.PlayerMenager;
-
-
-import java.util.HashMap;
-import java.util.Optional;
-
-public class Player extends PlayerMenager {
+public class Player  {
 
     private String Name;
     private int damage = 25;
     private int defence = 60;
-    private int HP = 500;
+    private int boostedHP = 500;
+    private int baseHP = 500;
     private int gold = 0;
     private int experience = 0;
     private int lvl = 0;
@@ -23,7 +16,7 @@ public class Player extends PlayerMenager {
 
 
     public Player(String name) {
-        this.Name = name;
+        Name = name;
     }
 
     public EquippedItems getEquippedItems() {
@@ -66,12 +59,12 @@ public class Player extends PlayerMenager {
         this.defence = defence;
     }
 
-    public int getHP() {
-        return HP;
+    public int getBoostedHP() {
+        return boostedHP;
     }
 
-    public void setHP(int HP) {
-        this.HP = HP;
+    public void setBoostedHP(int boostedHP) {
+        this.boostedHP = boostedHP;
     }
 
     public int getGold() {
@@ -106,28 +99,14 @@ public class Player extends PlayerMenager {
         this.lvlgate = lvlgate;
     }
 
-    public HashMap<Integer, Integer> hpBoost() {
-        HashMap<Integer, Integer> gainlvl = new HashMap<>();
-        for (int i = 10; i < 100; i++) {
-            for (int j = 1; j <= 20; j++) {
-                i += ((i + (i * 2)) / (j + 2));
-                gainlvl.put(j, i);
-            }
-        }
-        return gainlvl;
+    public int getBaseHP() {
+        return baseHP;
     }
 
-    public HashMap<Integer, Integer> lvlList() {
-        HashMap<Integer, Integer> gainlvl = new HashMap<>();
-        for (int i = 100; i < 1000; i++) {
-            for (int j = 1; j <= 20; j++) {
-                i += ((i + (i * 6)) / (j + 1));
-                gainlvl.put(j, i);
-            }
-        }
-        return gainlvl;
+    public void setBaseHP(int baseHP) {
+        this.baseHP = baseHP;
     }
-
+    /*
     void checkLevelUp() {
         Optional<Level> levelOptional = findLevelByExp();
         if (levelOptional.isPresent()) {
@@ -161,17 +140,7 @@ public class Player extends PlayerMenager {
         }
     }
 
-
-    public void test1() {
-        for (int i = 10; i < 100; i++) {
-            for (int j = 1; j <= 20; j++) {
-                i += ((i + (i * 2)) / (j + 2));
-                System.out.println(i);
-            }
-        }
-
-    }
-
+     */
 
     @Override
     public String toString() {
@@ -180,7 +149,7 @@ public class Player extends PlayerMenager {
                 ", Damage = " + damage +
                 ", Defence = " + defence +
                 ", GOLD :: " + gold +
-                ", HP :: " + HP +
+                ", HP :: " + baseHP + "/" + boostedHP +
                 ", EXP :: " + experience + "/" + lvlgate +
                 ", LVL." + lvl;
 
