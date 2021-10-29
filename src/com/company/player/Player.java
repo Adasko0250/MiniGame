@@ -3,7 +3,7 @@ package com.company.player;
 public class Player  {
 
     private String Name;
-    private int damage = 25;
+    private int damage = 60;
     private int defence = 60;
     private int boostedHP = 500;
     private int baseHP = 500;

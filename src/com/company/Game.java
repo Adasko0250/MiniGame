@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.menagers.MonsterMenager;
 import com.company.menagers.PlayerMenager;
 import com.company.monsters.Monster;
 import com.company.monsters.MonsterItems;
@@ -33,9 +34,11 @@ public class Game extends JFrame {
         Random random = new Random();
         Player player = new Player("Bob");
         PlayerMenager playerMenager = new PlayerMenager();
+        MonsterMenager monsterMenager = new MonsterMenager();
 
         Monster rat = new Monster("RAT", 47, 15, 10, 450);
         Monster skeleton = new Monster("Skeleton", 50, 15, 20, 1500);
+        Monster ghul = new Monster("Ghul",35,25,30,200);
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         System.out.println(player);
@@ -102,7 +105,10 @@ public class Game extends JFrame {
 
         System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
-        rat.checkHit(player);
+        monsterMenager.checkHit(player,rat);
+        System.out.println(player);
+        monsterMenager.checkHit(player,ghul);
+        playerMenager.checkHit(ghul,player);
         System.out.println(player);
 
     }

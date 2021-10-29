@@ -13,11 +13,5 @@ public interface PlayerInterface {
     void takeLoot(Monster monster, Inventory inventory, int position, Player player);
     void checkHit(Monster monster, Player player);
 
-    private void attack(Monster monster, Player player) {
 
-    }
-    private void criticalAttack(Monster monster, Player player){
-
-    }
-    private void missAttack(Player player){}
 }

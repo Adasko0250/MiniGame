@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="version 1">
-      <change afterPath="$PROJECT_DIR$/src/com/company/menagers/MonsterMenager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/monsters/MonsterInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/player/PlayerInterface.java" afterDir="false" />
+    <list default="true" id="5584b22d-d634-49b0-bd5b-695c0c523338" name="Changes" comment="version 1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/EquippedItems.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/GameScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/GameScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Inventory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Monster.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/MonsterItems.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/Player.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project1/com/company/menagers/PlayerMenager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/com/company/menagers/PlayerMenager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/menagers/MonsterMenager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/menagers/MonsterMenager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/menagers/PlayerMenager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/menagers/PlayerMenager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/monsters/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/monsters/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/monsters/MonsterInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/monsters/MonsterInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/player/PlayerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/player/PlayerInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635294439829</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="version 1.1">
+      <created>1635475156237</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1635475156237</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -418,6 +418,7 @@
     <MESSAGE value="Add Lvl and exp, new methods in Character" />
     <MESSAGE value="fix" />
     <MESSAGE value="version 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1" />
+    <MESSAGE value="version 1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.1" />
   </component>
 </project>

@@ -13,10 +13,11 @@ import java.util.Random;
 
 public class PlayerMenager implements PlayerInterface {
 
-     private Player player;
-    public PlayerMenager( ) {
+
+    public PlayerMenager() {
 
     }
+
     // EQ
     public void equipItem(Item item, Inventory inventory, EquippedItems equippedItems, Player player) {
         equippedItems.addEqItem(item);
@@ -31,6 +32,7 @@ public class PlayerMenager implements PlayerInterface {
         player.setDefence(player.getDefence() - item.getDefence());
         inventory.addItem(item);
     }
+
     // Loot
     public void openMonsterLoot(Monster monster) {
         MonsterItems loot = monster.getMonsterloot();
@@ -59,6 +61,7 @@ public class PlayerMenager implements PlayerInterface {
             inventory.addItem(loot.getMonsterItems().get(position));
         loot.removeItem(monster.getMonsterloot().getMonsterItems().get(position));
     }
+
     // Attack
     public void checkHit(Monster monster, Player player) {
         Random random = new Random();
@@ -108,6 +111,7 @@ public class PlayerMenager implements PlayerInterface {
     private void missAttack(Player player) {
         System.out.println(player.getName() + " miss attack ! ");
     }
+
     // Helpers
     public HashMap<Integer, Integer> hpBoost() {
         HashMap<Integer, Integer> gainlvl = new HashMap<>();
